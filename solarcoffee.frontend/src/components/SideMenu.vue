@@ -1,17 +1,44 @@
 <template>
   <div class="side-menu-container">
-    <img id="imgLogo" src="../assets/images/logo.png" alt="Logo solar coffee" />
+    <router-link to="/">
+      <img
+        id="imgLogo"
+        src="../assets/images/logo.png"
+        alt="Logo solar coffee"
+      />
+    </router-link>
+
     <h1>Managment Portal</h1>
-    <solar-button id="menuInventory" :link="'/inventory'">
+
+    <solar-button
+      id="menuInventory"
+      is-full-width
+      @button:click="goToRoute('/inventory')"
+    >
       Inventory
     </solar-button>
-    <solar-button id="menuCustomers" :link="'/customers'">
+
+    <solar-button
+      id="menuCustomers"
+      is-full-width
+      @button:click="goToRoute('/customer')"
+    >
       Manage Customers
     </solar-button>
-    <solar-button id="menuInvoice" :link="'/invoice/new'">
+
+    <solar-button
+      id="menuInvoice"
+      is-full-width
+      @button:click="goToRoute('/invoice/new')"
+    >
       New Invoice
     </solar-button>
-    <solar-button id="menuOrders" :link="'/orders'">
+
+    <solar-button
+      id="menuOrders"
+      is-full-width
+      @button:click="goToRoute('/orders')"
+    >
       Orders
     </solar-button>
   </div>
@@ -23,9 +50,13 @@ import SolarButton from "@/components/SolarButton.vue";
 
 @Component({
   name: "SideMenu",
-  components: { SolarButton }
+  components: { SolarButton },
 })
-export default class SideMenu extends Vue {}
+export default class SideMenu extends Vue {
+  async goToRoute(route: string) {
+    await this.$router.push(route);
+  }
+}
 </script>
 
 <style lang="scss" scoped>
