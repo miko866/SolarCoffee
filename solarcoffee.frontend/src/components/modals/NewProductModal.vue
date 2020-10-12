@@ -1,13 +1,14 @@
+<!--suppress XmlUnboundNsPrefix -->
+
 <template>
   <solar-modal>
     <template v-slot:header>
       Add New Product
     </template>
-
     <template v-slot:body>
       <ul class="newProduct">
         <li>
-          <label for="isTaxable">Is this product taxable? </label>
+          <label for="isTaxable">Is this product taxable?</label>
           <input
             type="checkbox"
             id="isTaxable"
@@ -15,37 +16,37 @@
           />
         </li>
         <li>
-          <label for="productName">Name </label>
+          <label for="productName">Name</label>
           <input type="text" id="productName" v-model="newProduct.name" />
         </li>
+
         <li>
-          <label for="productDescc">Description</label>
+          <label for="productDesc">Description</label>
           <input
             type="text"
             id="productDesc"
             v-model="newProduct.description"
           />
         </li>
+
         <li>
-          <label for="productPrice">Price (USD) </label>
+          <label for="productPrice">Price (USD)</label>
           <input type="number" id="productPrice" v-model="newProduct.price" />
         </li>
       </ul>
     </template>
-
     <template v-slot:footer>
       <solar-button
         type="button"
         @click.native="save"
-        arial-label="save new item"
+        aria-label="save new item"
       >
         Save Product
       </solar-button>
-
       <solar-button
         type="button"
         @click.native="close"
-        arial-label="close modal"
+        aria-label="close modal"
       >
         Close
       </solar-button>
@@ -61,7 +62,7 @@ import { IProduct, IProductInventory } from "@/types/Product";
 
 @Component({
   name: "NewProductModal",
-  components: { SolarButton, SolarModal },
+  components: { SolarButton, SolarModal }
 })
 export default class NewProductModal extends Vue {
   newProduct: IProduct = {
@@ -72,7 +73,7 @@ export default class NewProductModal extends Vue {
     isTaxable: false,
     name: "",
     price: 0,
-    isArchived: false,
+    isArchived: false
   };
 
   close() {
@@ -85,7 +86,7 @@ export default class NewProductModal extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .newProduct {
   list-style: none;
   padding: 0;

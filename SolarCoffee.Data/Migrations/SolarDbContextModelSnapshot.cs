@@ -262,8 +262,8 @@ namespace SolarCoffee.Data.Migrations
                         .HasMaxLength(100);
 
                     b.Property<string>("Country")
-                        .HasColumnType("character varying(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("character varying(32)")
+                        .HasMaxLength(32);
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("timestamp without time zone");

@@ -1,3 +1,5 @@
+<!--suppress XmlUnboundNsPrefix -->
+
 <template>
   <solar-modal>
     <template v-slot:header>
@@ -5,31 +7,27 @@
     </template>
     <template v-slot:body>
       <label for="product">Product Received:</label>
-
-      <select v-model="selectedProduct" class="shipmentItem" id="product">
+      <select v-model="selectedProduct" class="shipmentItems" id="product">
         <option disabled value="">Please select one</option>
         <option v-for="item in inventory" :value="item" :key="item.product.id">
           {{ item.product.name }}
         </option>
       </select>
-
       <label for="qtyReceived">Quantity Received:</label>
       <input type="number" id="qtyReceived" v-model="qtyReceived" />
     </template>
-
     <template v-slot:footer>
       <solar-button
         type="button"
         @button:click="save"
-        arial-label="Save new shipment"
+        aria-label="save new shipment"
       >
         Save Received Shipment
       </solar-button>
-
       <solar-button
         type="button"
         @button:click="close"
-        arial-label="Close modal"
+        aria-label="Close modal"
       >
         Close
       </solar-button>
@@ -46,7 +44,7 @@ import { IShipment } from "@/types/Shipment";
 
 @Component({
   name: "ShipmentModal",
-  components: { SolarButton, SolarModal },
+  components: { SolarButton, SolarModal }
 })
 export default class ShipmentModal extends Vue {
   @Prop({ required: true, type: Array as () => IProductInventory[] })
@@ -60,7 +58,7 @@ export default class ShipmentModal extends Vue {
     isTaxable: false,
     name: "",
     price: 0,
-    isArchived: false,
+    isArchived: false
   };
 
   qtyReceived: number = 0;
@@ -72,12 +70,12 @@ export default class ShipmentModal extends Vue {
   save() {
     let shipment: IShipment = {
       productId: this.selectedProduct.id,
-      adjustment: this.qtyReceived,
+      adjustment: this.qtyReceived
     };
 
-    this.$emit("save:shipment", shipment);
+    this.$emit('save:shipment', shipment)
   }
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>

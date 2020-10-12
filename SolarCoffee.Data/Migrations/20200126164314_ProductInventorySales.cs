@@ -28,7 +28,7 @@ namespace SolarCoffee.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SalesOrders",
+                name: "SlSalesOrders",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -40,9 +40,9 @@ namespace SolarCoffee.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SalesOrders", x => x.Id);
+                    table.PrimaryKey("PK_SlSalesOrders", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SalesOrders_Customers_CustomerId",
+                        name: "FK_SlSalesOrders_Customers_CustomerId",
                         column: x => x.CustomerId,
                         principalTable: "Customers",
                         principalColumn: "Id",
@@ -113,9 +113,9 @@ namespace SolarCoffee.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_SalesOrderItems_SalesOrders_SalesOrderId",
+                        name: "FK_SalesOrderItems_SlSalesOrders_SalesOrderId",
                         column: x => x.SalesOrderId,
-                        principalTable: "SalesOrders",
+                        principalTable: "SlSalesOrders",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -141,8 +141,8 @@ namespace SolarCoffee.Data.Migrations
                 column: "SalesOrderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SalesOrders_CustomerId",
-                table: "SalesOrders",
+                name: "IX_SlSalesOrders_CustomerId",
+                table: "SlSalesOrders",
                 column: "CustomerId");
         }
 
@@ -161,7 +161,7 @@ namespace SolarCoffee.Data.Migrations
                 name: "Products");
 
             migrationBuilder.DropTable(
-                name: "SalesOrders");
+                name: "SlSalesOrders");
         }
     }
 }

@@ -3,13 +3,11 @@
     <router-link to="/">
       <img
         id="imgLogo"
-        src="../assets/images/logo.png"
-        alt="Logo solar coffee"
+        alt="Solar Coffee logo"
+        src="../assets/images/solar_coffee_logo.png"
       />
     </router-link>
-
-    <h1>Managment Portal</h1>
-
+    <h1>Management Portal</h1>
     <solar-button
       id="menuInventory"
       is-full-width
@@ -17,15 +15,13 @@
     >
       Inventory
     </solar-button>
-
     <solar-button
       id="menuCustomers"
       is-full-width
-      @button:click="goToRoute('/customer')"
+      @button:click="goToRoute('/customers')"
     >
       Manage Customers
     </solar-button>
-
     <solar-button
       id="menuInvoice"
       is-full-width
@@ -33,7 +29,6 @@
     >
       New Invoice
     </solar-button>
-
     <solar-button
       id="menuOrders"
       is-full-width
@@ -50,7 +45,7 @@ import SolarButton from "@/components/SolarButton.vue";
 
 @Component({
   name: "SideMenu",
-  components: { SolarButton },
+  components: { SolarButton }
 })
 export default class SideMenu extends Vue {
   async goToRoute(route: string) {
@@ -59,7 +54,7 @@ export default class SideMenu extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 @import "@/scss/global.scss";
 
 .side-menu-container {
@@ -73,7 +68,7 @@ export default class SideMenu extends Vue {
   box-sizing: border-box;
 }
 
-#imageLogo {
+#imgLogo {
   width: 100%;
 }
 

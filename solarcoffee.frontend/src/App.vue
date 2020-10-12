@@ -21,7 +21,8 @@ export default class App extends Vue {}
 </script>
 
 <style lang="scss">
-@import "@/scss/global.scss";
+
+  @import "@/scss/global.scss";
 
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -55,4 +56,5 @@ hr {
   border: 1px solid #eee;
   margin: 1rem 0;
 }
+
 </style>

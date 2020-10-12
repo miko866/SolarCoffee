@@ -60,7 +60,7 @@ namespace SolarCoffee.Data.Migrations
                     City = table.Column<string>(maxLength: 100, nullable: true),
                     State = table.Column<string>(maxLength: 2, nullable: true),
                     PostalCode = table.Column<string>(maxLength: 10, nullable: true),
-                    Country = table.Column<string>(maxLength: 50, nullable: true)
+                    Country = table.Column<string>(maxLength: 32, nullable: true)
                 },
                 constraints: table =>
                 {

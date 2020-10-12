@@ -1,7 +1,7 @@
 $solar-blue: #2273db;
 $solar-red: #cc3020;
 $solar-green: #22a885;
-$solar-yellow: #ffbd59;
+$solar-yellow: #FFBD59;
 
 $menu-width: 240px;
 
@@ -10,7 +10,7 @@ body {
   padding: 0;
 }
 
-table {
+.table {
   width: 100%;
   max-width: 100%;
   margin-bottom: 2rem;
@@ -36,12 +36,13 @@ table {
     padding: 1.2rem;
     border-bottom: 2px solid $solar-blue;
   }
+
 }
 
-label {
+label  {
   font-weight: bold;
   display: block;
-  margin: 0.3rem;
+  margin-bottom: 0.3rem;
 }
 
 select {

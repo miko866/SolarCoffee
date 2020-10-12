@@ -10,7 +10,7 @@ using SolarCoffee.Data;
 namespace SolarCoffee.Data.Migrations
 {
     [DbContext(typeof(SolarDbContext))]
-    [Migration("20201004203329_ProductInventorySales")]
+    [Migration("20200126164314_ProductInventorySales")]
     partial class ProductInventorySales
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -264,8 +264,8 @@ namespace SolarCoffee.Data.Migrations
                         .HasMaxLength(100);
 
                     b.Property<string>("Country")
-                        .HasColumnType("character varying(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("character varying(32)")
+                        .HasMaxLength(32);
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("timestamp without time zone");
@@ -396,7 +396,7 @@ namespace SolarCoffee.Data.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("SalesOrders");
+                    b.ToTable("SlSalesOrders");
                 });
 
             modelBuilder.Entity("SolarCoffee.Data.Models.SalesOrderItem", b =>

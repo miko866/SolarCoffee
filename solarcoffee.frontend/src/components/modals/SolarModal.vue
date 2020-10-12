@@ -4,27 +4,37 @@
       <div
         class="modal"
         role="dialog"
-        aria-label="modalTitle"
+        aria-labelledby="modalTitle"
         aria-describedby="modalDescription"
       >
-        <header class="modal-header" id="modalTitle">
-          <slot name="header"></slot>
+        <header
+          class="modal-header"
+          id="modalTitle"
+        >
+          <slot name="header">
+          </slot>
         </header>
 
-        <section class="modal-body" id="modalDescription">
-          <slot name="body"></slot>
+        <section
+          class="modal-body"
+          id="modalDescription"
+        >
+          <slot name="body">
+          </slot>
         </section>
 
         <footer class="modal-footer">
-          <slot name="footer"></slot>
+          <slot name="footer">
+          </slot>
         </footer>
       </div>
     </div>
   </transition>
 </template>
 
-<script>
-import { Component, Vue } from "vue-property-decorator";
+<script lang="ts">
+import Vue from "vue";
+import Component from "vue-class-component";
 
 @Component({
   name: "SolarModal",
@@ -37,9 +47,8 @@ export default class SolarModal extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 @import "@/scss/global.scss";
-
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -90,7 +99,7 @@ export default class SolarModal extends Vue {
   opacity: 0;
 }
 
-.modal-fade-enter.active,
+.modal-fade-enter-active,
 .modal-fade-leave-active {
   transition: opacity 0.5s ease;
 }
